@@ -12,14 +12,14 @@ set_error_handler('error_handler', E_ALL);
 //Set the server default timezone
 date_default_timezone_set('Europe/London');
 
-//Base folder of the dash...
+//Base folder of the monitor
 define('BASE_URL', 'https://staging.hollatme.com/dashboard/memcache-monitor/');
 
 //Version of this monitoring thingy
 define('VERSION', '0.1');
 
 //If debug if true, then if there are errors, they'll be displayed
-define('DEBUG', true);
+define('DEBUG', false);
 
 //User details for access to the service
 define('USERNAME', 'admin');
