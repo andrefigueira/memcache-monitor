@@ -1,0 +1,185 @@
+/* BASE STYLES */
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	background: #DEDEDE;
+}
+
+a { color: #777; text-decoration: none;}
+
+ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+	ul li {
+		display: inline-block;
+	}
+
+:focus { outline:none;}
+
+input {
+	display: block;
+	border: none;
+	font-size: 14px;
+	padding: 10px;
+	width: 300px;
+	margin: 0;
+}
+
+input[type=submit] {
+	background: #80C579;
+	color: #FFF;
+	width: auto;
+	padding: 10px 30px;
+	cursor: pointer;
+}
+
+.full-overlay {
+	position:fixed;
+	top:0;
+	left:0;
+	background:#FFF;
+	width:100%;
+	height:100%;
+	z-index:50;
+	opacity:0.5;
+}
+
+.clear { clear:both;}
+
+.php-error {
+	
+}
+
+	.php-error .error-container {
+		top: 180px;
+		left: 50%;
+		margin: 0 0 0 -400px;
+		background:#FFF;
+		width: 800px;
+		position: absolute;
+		padding: 20px;
+		z-index: 99;
+		box-shadow: 0 0 10px #DDD;
+		border-radius: 4px;
+	}
+	
+		.php-error .error-container h1 {
+			color: #CCC!important;
+			text-align: left!important;
+			margin: 0;
+		}
+		
+		.php-error .error-container table {
+			margin: 20px 0 0 0;
+		}
+		
+			.php-error .error-container table tr {}
+			
+				.php-error .error-container table tr td {
+					padding: 10px 40px 10px 0;
+				}
+
+.notification {
+	padding: 20px;
+	background: #FFF;
+	text-align: center;
+}
+
+	.negative-notification {
+		background: #FDE7AE;
+	}
+
+/* END BASE STYLES */
+
+/* LOGIN STYLES */
+
+form.login {
+	width: 330px;
+	margin: 0 auto;
+	padding: 100px 0 0 0;
+}
+
+	form.login h1 {
+		text-transform: uppercase;
+		font-size: 20px;
+		font-weight: normal;
+		color: #FFF;
+		text-align: center;
+	}
+
+	form.login input[type=text], form.login input[type=password] {
+		margin: 0 0 1px 0;
+		padding: 15px;
+	}
+	
+	form.login input[type=text] { 
+		border-radius: 2px 2px 0 0;
+	}
+	
+	form.login input[type=password] { 
+		border-radius: 0 0 2px 2px;
+	}
+	
+	form.login input[type=submit] {
+		width: 330px;
+		margin: 20px 0 0 0;
+		box-shadow: 0 4px 0 #6AA662;
+		padding: 15px;
+		font-size: 16px;
+	}
+	
+	form.login span { 
+		display: block;
+		margin: 50px 0 0 0; 
+		font-size: 12px; 
+		text-align: center;
+		color: #AAA;
+	}
+
+/* END LOGIN STYLES */
+
+/* MAIN STYLES */
+
+header.masthead {
+	background: #324756;
+	padding: 0 0 4px 0;
+}
+
+	header.masthead a.home {
+		display: block;
+		float: left;
+		padding: 20px 30px;
+		color: #FFF;
+		text-transform: uppercase;
+	}
+
+	header.masthead nav {
+		display:block;
+		float:right;
+	}
+	
+		header.masthead nav ul {
+			
+		}
+		
+			header.masthead nav ul li {
+				
+			}
+		
+				header.masthead nav ul li a {
+					display: block;
+					padding: 20px 30px;
+					color: #FFF;
+					text-transform: uppercase;
+				}
+
+/* END MAIN STYLES */

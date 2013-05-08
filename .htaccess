@@ -1,0 +1,121 @@
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Site Functions -----------------------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#------------------------
+#Folder blocking (Prevents indexes from being able to be accessed)
+#------------------------
+Options -Indexes
+
+#------------------------
+#Make calls to functions via URL for ajax or form actions
+#------------------------
+
+RewriteRule ^request/([^/\.]+)/$ lib/request-handler.php?function=$1 [L]
+
+#------------------------
+#Pages
+#------------------------
+
+RewriteRule ^status-board$ status-board.php [L]
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#DO NOT EDIT BELOW THIS LINE Adding cache features, speed up the website...----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ErrorDocument 404 /404.php
+
+#------------------------
+#Compress text, html, javascript, css, xml:
+#------------------------
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+#------------------------
+#Or, compress certain file types by extension:
+#------------------------
+
+<files *.html>
+	SetOutputFilter DEFLATE
+</files>
+
+<files *.css>
+	SetOutputFilter DEFLATE
+</files>
+
+<files *.js>
+	SetOutputFilter DEFLATE
+</files>
+
+<files *.png>
+	SetOutputFilter DEFLATE
+</files>
+
+<files *.jpg>
+	SetOutputFilter DEFLATE
+</files>
+
+<files *.jpeg>
+	SetOutputFilter DEFLATE
+</files>
+
+#------------------------
+#Turn on Expires and set default to 0
+#------------------------
+
+ExpiresActive On
+ExpiresDefault A0
+
+#------------------------
+#Set up caching on media files for 1 year (forever?)
+#------------------------
+<filesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav)$">
+ExpiresDefault A29030400
+Header append Cache-Control "public"
+</filesMatch>
+
+#------------------------
+# Set up caching on media files for 1 week
+#------------------------
+<filesMatch "\.(gif|jpg|jpeg|png|swf)$">
+ExpiresDefault A604800
+Header append Cache-Control "public"
+</filesMatch>
+
+#------------------------
+# Set up 2 Hour caching on commonly updated files
+#------------------------
+<filesMatch "\.(xml|txt|html|js|css)$">
+ExpiresDefault A604800
+Header append Cache-Control "proxy-revalidate"
+</filesMatch>
+
+#------------------------
+#Set the default language
+#------------------------
+
+DefaultLanguage en-US
+
+#------------------------
+#Enable SVG
+#------------------------
+
+AddType image/svg+xml .svg
+
+#------------------------
+#Set the default character set
+#------------------------
+
+AddDefaultCharset UTF-8
