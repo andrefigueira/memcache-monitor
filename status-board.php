@@ -122,6 +122,10 @@
 						<td><?php echo $stats->pid; ?></td>
 					</tr>
 					<tr>
+						<th>Threads</th>
+						<td><?php echo $stats->threads; ?></td>
+					</tr>
+					<tr>
 						<th>Server time</th>
 						<td><?php echo date('d-m-Y H:i:s', $stats->time); ?></td>
 					</tr>
