@@ -112,69 +112,69 @@
 				
 					<tr>
 						<th>Host</th>
-						<td><?php echo MC_HOST; ?></td>
+						<td><span><?php echo MC_HOST; ?></span></td>
 					</tr>
 					
 					<tr>
 						<th>Port</th>
-						<td><?php echo MC_PORT; ?></td>
+						<td><span><?php echo MC_PORT; ?></span></td>
 					</tr>
 				
 					<tr>
 						<th>Process ID</th>
-						<td id="data_pid"><?php echo $stats->pid; ?></td>
+						<td><span id="data_pid"><?php echo $stats->pid; ?></span></td>
 					</tr>
 					<tr>
 						<th>Threads</th>
-						<td id="data_threads"><?php echo $stats->threads; ?></td>
+						<td><span id="data_threads"><?php echo $stats->threads; ?></span></td>
 					</tr>
 					<tr>
 						<th>Server time</th>
-						<td id="data_time"><?php echo date('d-m-Y H:i:s', $stats->time); ?></td>
+						<td><span id="data_time"><?php echo date('d-m-Y H:i:s', $stats->time); ?></span></td>
 					</tr>
 					<tr>
 						<th>Version</th>
-						<td><?php echo $stats->version; ?></td>
+						<td><span><?php echo $stats->version; ?></span></td>
 					</tr>
 					<tr>
 						<th>User process time</th>
-						<td id="data_rusage_user"><?php echo $stats->rusage_user; ?></td>
+						<td><span id="data_rusage_user"><?php echo $stats->rusage_user; ?></span></td>
 					</tr>
 					<tr>
 						<th>System process time</th>
-						<td id="data_rusage_system"><?php echo $stats->rusage_system; ?></td>
+						<td><span id="data_rusage_system"><?php echo $stats->rusage_system; ?></span></td>
 					</tr>
 					<tr>
 						<th>Total items stored</th>
-						<td id="data_total_items"><?php echo $stats->total_items; ?></td>
+						<td><span id="data_total_items"><?php echo $stats->total_items; ?></span></td>
 					</tr>
 					<tr>
 						<th>Open connections</th>
-						<td id="data_curr_connections"><?php echo $stats->curr_connections; ?></td>
+						<td><span id="data_curr_connections"><?php echo $stats->curr_connections; ?></span></td>
 					</tr>
 					<tr>
 						<th>Total connections</th>
-						<td id="data_total_connections"><?php echo $stats->total_connections; ?></td>
+						<td><span id="data_total_connections"><?php echo $stats->total_connections; ?></span></td>
 					</tr>
 					<tr>
 						<th>Allocated connections</th>
-						<td id="data_connection_structures"><?php echo $stats->connection_structures; ?></td>
+						<td><span id="data_connection_structures"><?php echo $stats->connection_structures; ?></span></td>
 					</tr>
 					<tr>
 						<th>Total retrieval requests</th>
-						<td id="data_cmd_get"><?php echo $stats->cmd_get; ?></td>
+						<td><span id="data_cmd_get"><?php echo $stats->cmd_get; ?></span></td>
 					</tr>
 					<tr>
 						<th>Total storage requests</th>
-						<td id="data_cmd_set"><?php echo $stats->cmd_set; ?></td>
+						<td><span id="data_cmd_set"><?php echo $stats->cmd_set; ?></span></td>
 					</tr>
 					<tr>
 						<th>Data read</th>
-						<td id="data_bytes_read"><?php echo format_bytes($stats->bytes_read); ?></td>
+						<td><span id="data_bytes_read"><?php echo format_bytes($stats->bytes_read); ?></span></td>
 					</tr>
 					<tr>
 						<th>Data written</th>
-						<td id="data_bytes_written"><?php echo format_bytes($stats->bytes_written); ?></td>
+						<td><span id="data_bytes_written"><?php echo format_bytes($stats->bytes_written); ?></span></td>
 					</tr>
 				
 				</table>
@@ -197,11 +197,11 @@
 				
 					<tr>
 						<th>Cache used</th>
-						<td id="data_cache_used"><?php echo $cache_used; ?></td>
+						<td><span id="data_cache_used"><?php echo $cache_used; ?></span></td>
 					</tr>
 					<tr>
 						<th>Cache size</th>
-						<td id="data_cache_size"><?php echo $cache_size; ?></td>
+						<td><span id="data_cache_size"><?php echo $cache_size; ?></span></td>
 					</tr>
 				
 				</table>
@@ -216,11 +216,11 @@
 				
 					<tr>
 						<th>Hits</th>
-						<td id="data_get_hits"><?php echo $stats->get_hits; ?></td>
+						<td><span id="data_get_hits"><?php echo $stats->get_hits; ?></span></td>
 					</tr>
 					<tr>
 						<th>Misses</th>
-						<td id="data_get_misses"><?php echo $stats->get_misses; ?></td>
+						<td><span id="data_get_misses"><?php echo $stats->get_misses; ?></span></td>
 					</tr>
 				
 				</table>

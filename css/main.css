@@ -230,7 +230,7 @@ header.masthead {
 	background: #FFF;
 	float: left;
 	margin: 0 20px 20px 0;
-	min-width: 205px;
+	min-width: 305px;
 }
 
 	.portal .title {
@@ -244,6 +244,7 @@ header.masthead {
 				
 table.standard-table {
 	background: #FFF;
+	width: 100%;
 }
 
 	table.standard-table th {
@@ -264,9 +265,21 @@ table.standard-table {
 			padding: 20px 20px;
 			border-bottom: 1px solid #EEE;
 		}
+		
+		table.standard-table tr td span {
+			display: block;
+			float: right;
+			padding: 8px 16px;
+			background: #E9E9E9;
+			color: #999;
+			border-radius: 2px;
+			-o-border-radius: 2px;
+			-moz-border-radius: 2px;
+			-khtml-border-radius: 2px;
+		}
 
 .pie-chart, .area-chart { 
-	width: 500px;
+	width: 530px;
 	height: 400px;
 }
 
