@@ -181,5 +181,28 @@ header.masthead {
 					color: #FFF;
 					text-transform: uppercase;
 				}
+				
+table.standard-table {
+	background: #FFF;
+}
+
+	table.standard-table th {
+		
+	}
+
+		table.standard-table tr th {
+			text-align: left;
+			padding: 15px 20px;
+			border-bottom: 1px solid #DDD;
+		}
+
+	table.standard-table tr {
+		
+	}
+
+		table.standard-table tr td {
+			padding: 15px 20px;
+			border-bottom: 1px solid #DDD;
+		}
 
 /* END MAIN STYLES */

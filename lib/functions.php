@@ -3,9 +3,6 @@
 //Configuration file
 require_once('config.php');
 
-//Classes
-require_once('classes/mcmonitor.class.php');
-
 function request_handler()
 {
 
@@ -161,9 +158,90 @@ function error_handler($num, $str, $file, $line, $context)
 
 }
 
+function array_to_object($array)
+{
 
+	$object = new stdClass();
+	
+	foreach ($array as $key => $value)
+	{
+	
+	    $object->$key = $value;
+	    
+	}
+	
+	return $object;
 
+}
 
+function seconds_to_time($input_seconds) 
+{
+
+    $secs_in_min = 60;
+    $secs_in_hour  = 60 * $secs_in_min;
+    $secs_in_day    = 24 * $secs_in_hour;
+
+    //Extract days
+    $days = floor($input_seconds / $secs_in_day);
+
+    //Extract hours
+    $hour_seconds = $input_seconds % $secs_in_day;
+    $hours = floor($hour_seconds / $secs_in_hour);
+
+    //Extract minutes
+    $minute_seconds = $hour_seconds % $secs_in_hour;
+    $minutes = floor($minute_seconds / $secs_in_min);
+
+    //Extract the remaining seconds
+    $remaining_seconds = $minute_seconds % $secs_in_min;
+    $seconds = ceil($remaining_seconds);
+
+    $array = array(
+        'd' => (int) $days,
+        'h' => (int) $hours,
+        'm' => (int) $minutes,
+        's' => (int) $seconds,
+    );
+    
+    return $array;
+    
+}
+
+function format_bytes($bytes)
+{
+	
+	if($bytes < 1024)
+	{ 
+	
+		return $bytes.' B';
+
+	}
+	elseif($bytes < 1048576)
+	{ 
+	
+		return round($bytes / 1024, 2).' KB';
+	
+	}
+	elseif($bytes < 1073741824)
+	{ 
+	
+		return round($bytes / 1048576, 2).' MB';
+	
+	}
+	elseif($bytes < 1099511627776)
+	{ 
+	
+		return round($bytes / 1073741824, 2).' GB';
+	
+	}
+	else
+	{ 
+	
+		return round($bytes / 1099511627776, 2).' TB';
+		
+	}
+
+}
 
 
 
