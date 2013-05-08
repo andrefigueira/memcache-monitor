@@ -150,16 +150,17 @@ form.login {
 /* MAIN STYLES */
 
 header.masthead {
-	background: #324756;
+	background: #4A82A8;
 	padding: 0 0 4px 0;
 }
 
 	header.masthead a.home {
 		display: block;
 		float: left;
-		padding: 20px 30px;
+		padding: 20px 30px 20px 20px;
 		color: #FFF;
 		text-transform: uppercase;
+		font-weight: bold;
 	}
 
 	header.masthead nav {
@@ -181,6 +182,51 @@ header.masthead {
 					color: #FFF;
 					text-transform: uppercase;
 				}
+
+.container {
+	padding: 20px;
+}
+
+.wrapper { min-width: 800px; max-width: 1320px; margin: 0 auto;}
+
+.sub-header {
+	background: #FFF;
+	padding: 20px;
+	margin: -20px 0 20px -20px;
+	width: 100%;
+}
+
+	.sub-header span {
+		display: inline-block;
+		background: #9CDA4F;
+		color: #FFF;
+		padding: 4px 15px;
+		border-radius: 2px;
+		font-family: monaco;
+		margin: 0 5px 0 0;
+		font-size: 12px;
+	}
+
+	.sub-header-left { float: left;}
+	.sub-header-right { float: right;}
+
+.portal {
+	display: inline-block;
+	padding: 20px;
+	background: #FFF;
+	float: left;
+	margin: 0 20px 20px 0;
+	min-width: 205px;
+}
+
+	.portal .title {
+		background: #4A82A8;
+		padding: 20px;
+		margin:-20px 0 0 -20px;
+		width: 100%;
+		color: #FFF;
+		text-transform: uppercase;
+	}
 				
 table.standard-table {
 	background: #FFF;
@@ -192,8 +238,8 @@ table.standard-table {
 
 		table.standard-table tr th {
 			text-align: left;
-			padding: 15px 20px;
-			border-bottom: 1px solid #DDD;
+			padding: 20px 20px;
+			border-bottom: 1px solid #EEE;
 		}
 
 	table.standard-table tr {
@@ -201,8 +247,13 @@ table.standard-table {
 	}
 
 		table.standard-table tr td {
-			padding: 15px 20px;
-			border-bottom: 1px solid #DDD;
+			padding: 20px 20px;
+			border-bottom: 1px solid #EEE;
 		}
+
+.pie-chart, .area-chart { 
+	width: 500px;
+	height: 400px;
+}
 
 /* END MAIN STYLES */
