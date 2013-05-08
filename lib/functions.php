@@ -189,7 +189,7 @@ function array_to_object($array)
 
 	$object = new stdClass();
 	
-	foreach ($array as $key => $value)
+	foreach($array as $key => $value)
 	{
 	
 	    $object->$key = $value;
@@ -269,7 +269,31 @@ function format_bytes($bytes)
 
 }
 
+function get_statistics()
+{
+	
+	$memcache = new Memcache();
+	
+	$cache_available = $memcache->connect(MC_HOST, MC_PORT);
+		
+	$stats_array = $memcache->getStats();
+	$stats = array_to_object($stats_array);
+	
+	$uptime = seconds_to_time($stats->uptime);
+	$uptime_str = $uptime['d'].'d '.$uptime['h'].'h '.$uptime['m'].'m '.$uptime['s'].'s';
+	$cache_size = format_bytes($stats->limit_maxbytes);
+	$cache_used = format_bytes($stats->bytes);
+	
+	$stats->uptime_str = $uptime_str;
+	$stats->cache_size = $cache_size;
+	$stats->cache_used = $cache_used;
+	$stats->time = date('d-m-Y H:i:s', $stats->time);
+	
+	header('Content-Type: application/json');
+	
+	echo json_encode($stats);
 
+}
 
 
 ?>

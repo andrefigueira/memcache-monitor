@@ -7,6 +7,7 @@
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script type="text/javascript">
 	
@@ -55,6 +56,8 @@
 </head>
 <body>
 	
+	<input type="hidden" name="BASE_URL" id="BASE_URL" value="<?php echo BASE_URL; ?>" />
+	
 	<?php require_once('lib/includes/header.php'); ?>
 	
 	<div class="container">
@@ -88,8 +91,8 @@
 			<div class="wrapper">
 			
 				<div class="sub-header-left">
-						<span>Uptime <?php echo $uptime_str; ?></span>
-						<span>Items stored <?php echo $stats->curr_items; ?></span>
+					<span id="data_uptime">Uptime <?php echo $uptime_str; ?></span>
+					<span id="items_curr_items">Items stored <?php echo $stats->curr_items; ?></span>
 				</div>
 				<div class="sub-header-right"></div>
 				
@@ -119,15 +122,15 @@
 				
 					<tr>
 						<th>Process ID</th>
-						<td><?php echo $stats->pid; ?></td>
+						<td id="data_pid"><?php echo $stats->pid; ?></td>
 					</tr>
 					<tr>
 						<th>Threads</th>
-						<td><?php echo $stats->threads; ?></td>
+						<td id="data_threads"><?php echo $stats->threads; ?></td>
 					</tr>
 					<tr>
 						<th>Server time</th>
-						<td><?php echo date('d-m-Y H:i:s', $stats->time); ?></td>
+						<td id="data_time"><?php echo date('d-m-Y H:i:s', $stats->time); ?></td>
 					</tr>
 					<tr>
 						<th>Version</th>
@@ -135,43 +138,43 @@
 					</tr>
 					<tr>
 						<th>User process time</th>
-						<td><?php echo $stats->rusage_user; ?></td>
+						<td id="data_rusage_user"><?php echo $stats->rusage_user; ?></td>
 					</tr>
 					<tr>
 						<th>System process time</th>
-						<td><?php echo $stats->rusage_system; ?></td>
+						<td id="data_rusage_system"><?php echo $stats->rusage_system; ?></td>
 					</tr>
 					<tr>
 						<th>Total items stored</th>
-						<td><?php echo $stats->total_items; ?></td>
+						<td id="data_total_items"><?php echo $stats->total_items; ?></td>
 					</tr>
 					<tr>
 						<th>Open connections</th>
-						<td><?php echo $stats->curr_connections; ?></td>
+						<td id="data_curr_connections"><?php echo $stats->curr_connections; ?></td>
 					</tr>
 					<tr>
 						<th>Total connections</th>
-						<td><?php echo $stats->total_connections; ?></td>
+						<td id="data_total_connections"><?php echo $stats->total_connections; ?></td>
 					</tr>
 					<tr>
 						<th>Allocated connections</th>
-						<td><?php echo $stats->connection_structures; ?></td>
+						<td id="data_connection_structures"><?php echo $stats->connection_structures; ?></td>
 					</tr>
 					<tr>
 						<th>Total retrieval requests</th>
-						<td><?php echo $stats->cmd_get; ?></td>
+						<td id="data_cmd_get"><?php echo $stats->cmd_get; ?></td>
 					</tr>
 					<tr>
 						<th>Total storage requests</th>
-						<td><?php echo $stats->cmd_set; ?></td>
+						<td id="data_cmd_set"><?php echo $stats->cmd_set; ?></td>
 					</tr>
 					<tr>
 						<th>Data read</th>
-						<td><?php echo format_bytes($stats->bytes_read); ?></td>
+						<td id="data_bytes_read"><?php echo format_bytes($stats->bytes_read); ?></td>
 					</tr>
 					<tr>
 						<th>Data written</th>
-						<td><?php echo format_bytes($stats->bytes_written); ?></td>
+						<td id="data_bytes_written"><?php echo format_bytes($stats->bytes_written); ?></td>
 					</tr>
 				
 				</table>
@@ -194,11 +197,11 @@
 				
 					<tr>
 						<th>Cache used</th>
-						<td><?php echo $cache_used; ?></td>
+						<td id="data_cache_used"><?php echo $cache_used; ?></td>
 					</tr>
 					<tr>
 						<th>Cache size</th>
-						<td><?php echo $cache_size; ?></td>
+						<td id="data_cache_size"><?php echo $cache_size; ?></td>
 					</tr>
 				
 				</table>
@@ -213,11 +216,11 @@
 				
 					<tr>
 						<th>Hits</th>
-						<td><?php echo $stats->get_hits; ?></td>
+						<td id="data_get_hits"><?php echo $stats->get_hits; ?></td>
 					</tr>
 					<tr>
 						<th>Misses</th>
-						<td><?php echo $stats->get_misses; ?></td>
+						<td id="data_get_misses"><?php echo $stats->get_misses; ?></td>
 					</tr>
 				
 				</table>
