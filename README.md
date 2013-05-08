@@ -3,6 +3,13 @@ memcache-monitor
 
 A memcache monitoring web based GUI access via the browser.
 
+Screenshots
+================
+
+Login -> http://cl.ly/image/341R440B2t2R
+Dash -> http://cl.ly/image/2t2W3A2K3w1t
+
+
 Requirements
 ================
 
