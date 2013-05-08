@@ -69,7 +69,13 @@ input[type=submit] {
 		padding: 20px;
 		z-index: 99;
 		box-shadow: 0 0 10px #DDD;
+		-o-box-shadow: 0 0 10px #DDD;
+		-moz-box-shadow: 0 0 10px #DDD;
+		-webkit-box-shadow: 0 0 10px #DDD;
 		border-radius: 4px;
+		-o-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
 	}
 	
 		.php-error .error-container h1 {
@@ -96,6 +102,11 @@ input[type=submit] {
 
 	.negative-notification {
 		background: #FDE7AE;
+	}
+	
+	.positive-notification {
+		background: #C5EBA2;
+		color: #80C579;
 	}
 
 /* END BASE STYLES */
@@ -202,6 +213,9 @@ header.masthead {
 		color: #FFF;
 		padding: 4px 15px;
 		border-radius: 2px;
+		-o-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-khtml-border-radius: 2px;
 		font-family: monaco;
 		margin: 0 5px 0 0;
 		font-size: 12px;

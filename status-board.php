@@ -1,4 +1,4 @@
-<?php require_once('lib/functions.php'); ?>
+<?php require_once('lib/functions.php'); is_authenticated(); ?>
 <!DOCTYPE html>
 <html>
 <head>

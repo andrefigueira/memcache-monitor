@@ -24,6 +24,30 @@ function request_handler()
 
 }
 
+function is_authenticated()
+{
+
+	if(!isset($_SESSION['authenticated']))
+	{
+		
+		set_notification('You must be logged in to see that...', 'negative-notification');
+		header('Location: '.BASE_URL);
+		
+	}
+
+}
+
+function logout()
+{
+
+	unset($_SESSION['authenticated']);
+	
+	set_notification('Logged out safely', 'positive-notification');
+	
+	header('Location: '.BASE_URL);
+
+}
+
 function post_var($key, $required = true)
 {
 
@@ -68,6 +92,8 @@ function login()
 			
 			if($user == USERNAME && $pass == PASSWORD)
 			{
+			
+				$_SESSION['authenticated'] = true;
 				
 				$url = 'status-board';
 				

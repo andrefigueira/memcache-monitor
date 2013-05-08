@@ -8,9 +8,7 @@
 		
 		<nav>
 			<ul>
-				<li><a href="status-board">Manage Cache</a></li>
-				<li><a href="status-board">Other</a></li>
-				<li><a href="actions/logout/">Logout</a></li>
+				<li><a href="request/logout/">Logout</a></li>
 			</ul>
 		</nav>
 		
