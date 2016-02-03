@@ -1,6 +1,10 @@
 memcache-monitor
 ================
 
+## NO LONGER MAINTAINED - Feel free however to clone and modify
+
+### In addition, the code in this repository does not follow any estabilished best practices, so please do NOT base any of your code on it's contents.
+
 A memcache monitoring web based GUI access via the browser.
 
 Screenshots
